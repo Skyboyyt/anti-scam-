@@ -1,0 +1,385 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>TRACE — On-chain Intelligence</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="wrap">
+    <nav class="nav">
+      <a class="brand" href="#"><i></i>TRACE</a>
+
+      <div class="links">
+        <a href="#intelligence">Intelligence</a>
+        <a href="#community">Community</a>
+        <a href="#evidence">Evidence</a>
+        <a href="#how">How it works</a>
+      </div>
+
+      <div>
+        <a class="login" href="#">Log in</a>
+        <button class="btn" onclick="openReport()">Report activity</button>
+      </div>
+    </nav>
+
+    <main>
+      <section class="hero">
+        <div class="eyebrow">On-chain reputation intelligence</div>
+        <h1>Know what’s behind<br>the token.</h1>
+        <p>
+          Investigate tokens, wallets and developers before you trust them.
+          Transparent analysis, grounded in verifiable evidence.
+        </p>
+
+        <div class="search">
+          <input
+            id="address"
+            placeholder="Paste a token or wallet address"
+            aria-label="Token or wallet address"
+          >
+          <button onclick="scan()">Investigate →</button>
+        </div>
+
+        <div class="chips">
+          <span>Ethereum</span>
+          <span>Solana</span>
+          <span>Base</span>
+          <span>BNB Chain</span>
+          <span>Arbitrum</span>
+        </div>
+      </section>
+
+      <section class="stats">
+        <div class="stat"><b>184K+</b><small>Entities analyzed</small></div>
+        <div class="stat"><b>2.8M</b><small>Wallet relationships mapped</small></div>
+        <div class="stat"><b>61K</b><small>Evidence records</small></div>
+        <div class="stat"><b>6</b><small>Networks supported</small></div>
+      </section>
+
+      <section id="intelligence">
+        <div class="section-head">
+          <div>
+            <h2>Investigation workspace</h2>
+            <p>A sample report with every conclusion tied to its evidence.</p>
+          </div>
+          <div class="live">Network indexed</div>
+        </div>
+
+        <div class="dashboard">
+          <article class="card">
+            <div class="scan-title">
+              <div class="token">
+                <div class="coin">N</div>
+                <div>
+                  <strong>Nova Protocol</strong>
+                  <span class="mono">NOVA · Ethereum</span>
+                </div>
+              </div>
+              <span class="tag high">HIGH RISK</span>
+            </div>
+
+            <div class="riskrow">
+              <div class="ring"><b>38</b></div>
+
+              <div class="risktext">
+                <b>Risk score <span class="muted">/ 100</span></b>
+                <small>High risk · evidence available</small>
+                <p class="muted">
+                  Score reflects observed signals and verified sources; it is
+                  not a declaration of wrongdoing.
+                </p>
+              </div>
+            </div>
+
+            <div class="bars">
+              <div class="bar">
+                <span>Developer reputation</span>
+                <div class="track"><div class="fill red" style="width:31%"></div></div>
+                <b>31</b>
+              </div>
+
+              <div class="bar">
+                <span>Contract security</span>
+                <div class="track"><div class="fill" style="width:48%"></div></div>
+                <b>48</b>
+              </div>
+
+              <div class="bar">
+                <span>Wallet network risk</span>
+                <div class="track"><div class="fill" style="width:42%"></div></div>
+                <b>42</b>
+              </div>
+
+              <div class="bar">
+                <span>Holder distribution</span>
+                <div class="track"><div class="fill green" style="width:71%"></div></div>
+                <b>71</b>
+              </div>
+            </div>
+          </article>
+
+          <aside class="card feed">
+            <h3>Investigation timeline</h3>
+
+            <div class="event">
+              <i class="dot"></i>
+              <div>
+                <b>Potential wallet relationship detected</b>
+                <small>Shared funding source identified in the transaction graph.</small>
+              </div>
+              <time>2h ago</time>
+            </div>
+
+            <div class="event">
+              <i class="dot blue"></i>
+              <div>
+                <b>Developer history updated</b>
+                <small>One prior project record has new indexed activity.</small>
+              </div>
+              <time>1d ago</time>
+            </div>
+
+            <div class="event">
+              <i class="dot green"></i>
+              <div>
+                <b>Contract record verified</b>
+                <small>Source metadata refreshed from chain index.</small>
+              </div>
+              <time>3d ago</time>
+            </div>
+
+            <div class="event">
+              <i class="dot gray"></i>
+              <div>
+                <b>Community report received</b>
+                <small>Unverified claim — awaiting moderator review.</small>
+              </div>
+              <time>5d ago</time>
+            </div>
+          </aside>
+        </div>
+      </section>
+
+      <section class="facts">
+        <article class="card fact">
+          <div class="icon">◈</div>
+          <h3>Developer intelligence</h3>
+          <p>
+            Follow a deployer through previous launches, allocation behavior
+            and project outcomes — with uncertainty made visible.
+          </p>
+        </article>
+
+        <article class="card fact">
+          <div class="icon">⌘</div>
+          <h3>Relationship graphs</h3>
+          <p>
+            Explore funding flows, liquidity actions and related wallets.
+            Trace identifies relationships; you assess the context.
+          </p>
+        </article>
+
+        <article class="card fact">
+          <div class="icon">◌</div>
+          <h3>Continuous monitoring</h3>
+          <p>
+            Keep watch on the entities that matter. Receive clear alerts when
+            score-driving activity changes.
+          </p>
+        </article>
+      </section>
+
+      <section class="community" id="community">
+        <div class="section-head">
+          <div>
+            <h2>Community intelligence</h2>
+            <p>Reports are useful leads — never automatic conclusions.</p>
+          </div>
+          <button class="btn primary" onclick="openReport()">+ Submit a report</button>
+        </div>
+
+        <div class="community-grid">
+          <article class="card">
+            <span class="eyebrow">How reports work</span>
+            <h3>Evidence-led moderation</h3>
+            <p class="muted">
+              Anyone can flag suspicious activity. Every submission begins as
+              <b>UNVERIFIED</b>, is reviewed for evidence, and cannot alter an
+              entity’s classification on its own.
+            </p>
+            <button class="btn" onclick="openReport()">Report suspicious activity</button>
+          </article>
+
+          <article class="card">
+            <div class="scan-title">
+              <h3>Recent reports</h3>
+              <span class="mono">PUBLIC FEED</span>
+            </div>
+
+            <div class="report-list" id="reportList">
+              <div class="report">
+                <span class="report-type">UNVERIFIED</span>
+                <b>Potential phishing contract</b>
+                <small>Ethereum · Submitted 2 hours ago · Review pending</small>
+              </div>
+
+              <div class="report">
+                <span class="report-type">VERIFIED EVIDENCE</span>
+                <b>Liquidity movement observation</b>
+                <small>Base · Submitted yesterday · Evidence linked</small>
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <section class="evidence" id="evidence">
+    <div class="wrap">
+      <div class="section-head">
+        <div>
+          <h2>Evidence before conclusions</h2>
+          <p>Trace separates what happened from what it may mean.</p>
+        </div>
+      </div>
+
+      <div class="egrid">
+        <article class="claim">
+          <header>
+            <b>DETECTED PATTERN</b>
+            <span class="confidence">HIGH CONFIDENCE</span>
+          </header>
+          <p>
+            Three wallets received funds from a common source within a short
+            interval, then interacted with the same contract.
+          </p>
+          <footer>On-chain transaction graph · Timestamped · Source linked</footer>
+        </article>
+
+        <article class="claim neutral">
+          <header>
+            <b>COMMUNITY REPORT</b>
+            <span class="confidence neutral-text">UNVERIFIED</span>
+          </header>
+          <p>
+            A community member submitted a report concerning liquidity movement.
+            No classification is changed until evidence is reviewed.
+          </p>
+          <footer>User-submitted claim · Awaiting moderation</footer>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="wrap how" id="how">
+    <div class="section-head">
+      <div>
+        <h2>One investigation, full context</h2>
+        <p>Don’t just check the token. Investigate what’s behind it.</p>
+      </div>
+    </div>
+
+    <div class="steps">
+      <div class="step">
+        <span>01 / IDENTIFY</span>
+        <h3>Start with an address</h3>
+        <p>Enter a token, wallet or contract. Trace resolves the entity and begins an evidence-aware scan.</p>
+      </div>
+
+      <div class="step">
+        <span>02 / CONNECT</span>
+        <h3>Map the history</h3>
+        <p>Explore deployers, past projects, transactions and related wallets across supported networks.</p>
+      </div>
+
+      <div class="step">
+        <span>03 / DECIDE</span>
+        <h3>Read the evidence</h3>
+        <p>Assess transparent scores, confidence levels and underlying records — never unsupported labels.</p>
+      </div>
+    </div>
+  </section>
+
+  <footer class="wrap footer">
+    <div class="brand small-brand"><i></i>TRACE</div>
+    <div>On-chain Reputation &amp; Crypto Threat Intelligence</div>
+  </footer>
+
+  <div id="toast" class="toast"></div>
+
+  <div class="modal" id="reportModal" onclick="if(event.target === this) closeReport()">
+    <div class="dialog">
+      <button class="close" onclick="closeReport()" aria-label="Close">×</button>
+
+      <h2>Submit community report</h2>
+      <p>
+        Use facts, links and transaction references where possible. Your report
+        remains unverified until independently reviewed.
+      </p>
+
+      <form id="reportForm">
+        <div class="form-grid">
+          <div class="field">
+            <label>REPORT TYPE</label>
+            <select id="type">
+              <option>Suspicious wallet</option>
+              <option>Phishing</option>
+              <option>Fake contract</option>
+              <option>Rug pull</option>
+              <option>Suspicious developer</option>
+              <option>Other suspicious activity</option>
+            </select>
+          </div>
+
+          <div class="field">
+            <label>NETWORK</label>
+            <select id="network">
+              <option>Ethereum</option>
+              <option>Solana</option>
+              <option>Base</option>
+              <option>BNB Chain</option>
+              <option>Arbitrum</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="field">
+          <label>ENTITY / CONTRACT ADDRESS</label>
+          <input id="entity" required placeholder="0x… or wallet address">
+        </div>
+
+        <div class="field">
+          <label>WHAT DID YOU OBSERVE?</label>
+          <textarea
+            id="details"
+            required
+            placeholder="Describe observed activity. Do not state allegations as fact."
+          ></textarea>
+        </div>
+
+        <div class="field">
+          <label>EVIDENCE LINK (OPTIONAL)</label>
+          <input id="evidenceLink" placeholder="Explorer transaction or source URL">
+        </div>
+
+        <div class="status" id="status">
+          Report submitted as UNVERIFIED and added to the review queue.
+        </div>
+
+        <div class="form-actions">
+          <button type="button" class="btn" onclick="closeReport()">Cancel</button>
+          <button type="submit" class="btn primary">Submit report</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
